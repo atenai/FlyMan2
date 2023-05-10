@@ -12,15 +12,14 @@ class FLYMAN2_API ATestMyActor : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	//コンストラクタ
 	ATestMyActor();
 
 protected:
-	// Called when the game starts or when spawned
+	//スタート関数
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	//アップデート関数
 	virtual void Tick(float DeltaTime) override;
-
 };

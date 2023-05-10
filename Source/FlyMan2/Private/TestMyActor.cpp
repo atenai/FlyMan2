@@ -3,15 +3,13 @@
 #include "TestMyActor.h"
 #include "Kismet/KismetSystemLibrary.h" //追加
 
-// Sets default values
+//コンストラクタ
 ATestMyActor::ATestMyActor()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
-// Called when the game starts or when spawned
+//スタート関数
 void ATestMyActor::BeginPlay()
 {
 	Super::BeginPlay();
@@ -21,10 +19,9 @@ void ATestMyActor::BeginPlay()
 	UKismetSystemLibrary::PrintString(this, "Test20230427", true, true, FColor::Orange, 30.0f);
 }
 
-// Called every frame
+//アップデート関数
 void ATestMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
