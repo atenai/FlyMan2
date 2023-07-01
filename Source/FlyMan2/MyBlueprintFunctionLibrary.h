@@ -7,7 +7,7 @@
 #include "MyBlueprintFunctionLibrary.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class FLYMAN2_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
@@ -16,5 +16,5 @@ class FLYMAN2_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 	
 public:
 	UFUNCTION(BlueprintCallable, Category = "MyBPLibrary")
-		static FString HelloWorld();
+	static FString HelloWorld();
 };
