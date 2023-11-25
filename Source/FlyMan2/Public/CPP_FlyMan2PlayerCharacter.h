@@ -4,15 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "CPP_Character.generated.h"
+#include "CPP_FlyMan2PlayerCharacter.generated.h"
 
 UCLASS()
-class FLYMAN2_API ACPP_Character : public ACharacter
+class FLYMAN2_API ACPP_FlyMan2PlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
-	ACPP_Character();
+	ACPP_FlyMan2PlayerCharacter();
 
 protected:
 	virtual void BeginPlay() override;
@@ -22,5 +22,5 @@ public:
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
+	FVector GetPos();
 };
