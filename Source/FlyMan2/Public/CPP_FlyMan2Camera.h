@@ -12,10 +12,11 @@ class FLYMAN2_API ACPP_FlyMan2Camera : public ACameraActor
 {
 	GENERATED_BODY()
 public:
+	//コンストラクタ
 	ACPP_FlyMan2Camera();
-
+	//スタート関数
 	virtual void BeginPlay() override;
-
+	//アップデート関数
 	virtual void Tick(float DeltaTime) override;
 
 	TObjectPtr<class ACPP_FlyMan2PlayerCharacter> player;

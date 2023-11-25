@@ -5,14 +5,19 @@
 #include "Engine.h"
 #include "Kismet/GameplayStatics.h"
 #include "CPP_FlyMan2PlayerCharacter.h"
+#include "Kismet/KismetSystemLibrary.h" 
 
+//コンストラクタ
 ACPP_FlyMan2Camera::ACPP_FlyMan2Camera() :Super()
 {
 	PrimaryActorTick.bCanEverTick = true;//これはTick関数を使用できるようにする一文
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraConstruct"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraConstruct"));
+	//UKismetSystemLibraryクラスのPrintString関数を呼び出す
+	UKismetSystemLibrary::PrintString(this, "CameraConstruct", true, true, FColor::Orange, 5.0f);
 }
 
+//スタート関数
 void ACPP_FlyMan2Camera::BeginPlay()
 {
 	Super::BeginPlay();
@@ -20,11 +25,12 @@ void ACPP_FlyMan2Camera::BeginPlay()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraBeginPlay"));
 }
 
+//アップデート関数
 void ACPP_FlyMan2Camera::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraTick"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraTick"));
 
 	//キャストしてプレイヤーキャラクターを取得する
 	player = Cast<ACPP_FlyMan2PlayerCharacter>(UGameplayStatics::GetActorOfClass(GetWorld(), ACPP_FlyMan2PlayerCharacter::StaticClass()));

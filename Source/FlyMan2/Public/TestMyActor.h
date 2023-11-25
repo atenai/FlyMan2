@@ -12,14 +12,14 @@ class FLYMAN2_API ATestMyActor : public AActor
 	GENERATED_BODY()
 	
 public:	
-	//コンストラクタ
+	
 	ATestMyActor();
 
 protected:
-	//スタート関数
+	
 	virtual void BeginPlay() override;
 
 public:	
-	//アップデート関数
+	
 	virtual void Tick(float DeltaTime) override;
 };
