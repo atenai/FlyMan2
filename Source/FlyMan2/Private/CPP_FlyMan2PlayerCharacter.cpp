@@ -31,3 +31,8 @@ FVector ACPP_FlyMan2PlayerCharacter::GetPos()
 {
 	return GetActorLocation();
 }
+
+void ACPP_FlyMan2PlayerCharacter::Shot()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Fire3"));
+}

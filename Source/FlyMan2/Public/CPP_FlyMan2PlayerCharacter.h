@@ -23,4 +23,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	FVector GetPos();
+
+	void Shot();
 };

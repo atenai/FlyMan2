@@ -3,6 +3,7 @@
 
 #include "CPP_FlyMan2GameModeBase.h"
 #include "UObject/ConstructorHelpers.h"
+#include "CPP_FlyMan2PlayerController.h"
 
 ACPP_FlyMan2GameModeBase::ACPP_FlyMan2GameModeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -15,4 +16,7 @@ ACPP_FlyMan2GameModeBase::ACPP_FlyMan2GameModeBase(const FObjectInitializer& Obj
 		//キャラクターをゲームモードのデフォルトポーンクラスに設定
 		DefaultPawnClass = playerClass.Class;
 	}
+
+	//ゲームモードのコントローラーを設定
+	PlayerControllerClass = ACPP_FlyMan2PlayerController::StaticClass();
 }

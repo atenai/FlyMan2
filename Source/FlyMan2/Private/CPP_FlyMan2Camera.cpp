@@ -11,10 +11,6 @@
 ACPP_FlyMan2Camera::ACPP_FlyMan2Camera() :Super()
 {
 	PrimaryActorTick.bCanEverTick = true;//これはTick関数を使用できるようにする一文
-
-	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraConstruct"));
-	//UKismetSystemLibraryクラスのPrintString関数を呼び出す
-	UKismetSystemLibrary::PrintString(this, "CameraConstruct", true, true, FColor::Orange, 5.0f);
 }
 
 //スタート関数
@@ -22,7 +18,9 @@ void ACPP_FlyMan2Camera::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraBeginPlay"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("CameraBeginPlay"));
+	//UKismetSystemLibraryクラスのPrintString関数を呼び出す
+	UKismetSystemLibrary::PrintString(this, "CameraBeginPlay", true, true, FColor::Orange, 5.0f);
 }
 
 //アップデート関数
