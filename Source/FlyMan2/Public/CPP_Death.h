@@ -3,29 +3,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
 #include "Components/BoxComponent.h"//ìñÇΩÇËîªíË1
-#include "CPP_FlyMan2PlayerCharacter.generated.h"
+#include "CPP_Death.generated.h"
 
 UCLASS()
-class FLYMAN2_API ACPP_FlyMan2PlayerCharacter : public ACharacter
+class FLYMAN2_API ACPP_Death : public AActor
 {
 	GENERATED_BODY()
-
-public:
-	ACPP_FlyMan2PlayerCharacter();
+	
+public:	
+	// Sets default values for this actor's properties
+	ACPP_Death();
 
 protected:
+	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
+	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	FVector GetPos();
-
-	void Shot();
 
 	//ìñÇΩÇËîªíË1
 	UPROPERTY(VisibleAnywhere)
@@ -35,7 +32,7 @@ public:
 	UFUNCTION()
 	void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	//ìñÇΩÇËîªíË2
-	UFUNCTION()
-	void OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
+	//ëJà⁄Ç∑ÇÈLevelÇÃSoftéQè∆
+	UPROPERTY(BlueprintReadWrite, EditAnywhere , Category ="Default")
+	TSoftObjectPtr<UWorld> LoadLevel;
 };
