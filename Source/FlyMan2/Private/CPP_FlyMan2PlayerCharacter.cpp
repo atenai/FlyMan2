@@ -10,23 +10,7 @@ ACPP_FlyMan2PlayerCharacter::ACPP_FlyMan2PlayerCharacter()
 
 	Tags.AddUnique(TEXT("Player"));//タグの設定
 
-	//当たり判定1
-	//BoxComponentを追加し、BoxComponentをRootComponentにAttachする
-	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxComponent"));
-	Collider->SetupAttachment(RootComponent);
-
-	//当たり判定1
-	//Boxのサイズを設定する
-	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 90.0f));
-
-	//当たり判定1
-	//Boxの位置を調整する
-	Collider->SetRelativeLocation(FVector(0.0f, 0.0f, 00.0f), false);
-
-	//当たり判定1
-	Collider->OnComponentBeginOverlap.AddDynamic(this, &ACPP_FlyMan2PlayerCharacter::OnBoxBeginOverlap);
-
-	//当たり判定2
+	//当たり判定
 	this->OnActorBeginOverlap.AddDynamic(this, &ACPP_FlyMan2PlayerCharacter::OnBeginOverlap);
 }
 
@@ -58,14 +42,7 @@ void ACPP_FlyMan2PlayerCharacter::Shot()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Fire3"));
 }
 
-//当たり判定1
-void ACPP_FlyMan2PlayerCharacter::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	//ここに衝突したときの処理を書く
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, TEXT("PlayerOnBoxBeginOverlap"));
-}
-
-//当たり判定2
+//当たり判定
 void ACPP_FlyMan2PlayerCharacter::OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor)
 {
 	//ここに衝突したときの処理を書く

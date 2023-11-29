@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Components/BoxComponent.h"//“–‚½‚è”»’è1
 #include "CPP_FlyMan2PlayerCharacter.generated.h"
 
 UCLASS()
@@ -27,15 +26,7 @@ public:
 
 	void Shot();
 
-	//“–‚½‚è”»’è1
-	UPROPERTY(VisibleAnywhere)
-	TObjectPtr<UBoxComponent> Collider;
-
-	//“–‚½‚è”»’è1
-	UFUNCTION()
-	void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
-	//“–‚½‚è”»’è2
+	//“–‚½‚è”»’è
 	UFUNCTION()
 	void OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
 };
