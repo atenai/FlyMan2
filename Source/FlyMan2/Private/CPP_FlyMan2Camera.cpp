@@ -1,19 +1,21 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CPP_FlyMan2Camera.h"
 #include "Engine.h"
 #include "Kismet/GameplayStatics.h"
 #include "CPP_FlyMan2PlayerCharacter.h"
 #include "Kismet/KismetSystemLibrary.h" 
 
-//コンストラクタ
+/// <summary>
+/// コンストラクタ
+/// </summary>
 ACPP_FlyMan2Camera::ACPP_FlyMan2Camera() :Super()
 {
-	PrimaryActorTick.bCanEverTick = true;//これはTick関数を使用できるようにする一文
+	//これはTick関数を使用できるようにする一文
+	PrimaryActorTick.bCanEverTick = true;
 }
 
-//スタート関数
+/// <summary>
+/// スタート関数
+/// </summary>
 void ACPP_FlyMan2Camera::BeginPlay()
 {
 	Super::BeginPlay();
@@ -23,7 +25,9 @@ void ACPP_FlyMan2Camera::BeginPlay()
 	UKismetSystemLibrary::PrintString(this, "CameraBeginPlay", true, true, FColor::Orange, 5.0f);
 }
 
-//アップデート関数
+/// <summary>
+/// アップデート関数
+/// </summary>
 void ACPP_FlyMan2Camera::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

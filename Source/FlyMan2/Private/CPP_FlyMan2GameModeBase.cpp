@@ -1,10 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CPP_FlyMan2GameModeBase.h"
 #include "UObject/ConstructorHelpers.h"
 #include "CPP_FlyMan2PlayerController.h"
 
+/// <summary>
+/// コンストラクタ
+/// </summary>
 ACPP_FlyMan2GameModeBase::ACPP_FlyMan2GameModeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	//ブループリントのキャラクターを取得

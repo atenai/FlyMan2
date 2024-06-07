@@ -1,35 +1,40 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CPP_FlyMan2PlayerCharacter.h"
 #include "Engine.h"
 
+/// <summary>
+/// コンストラクタ
+/// </summary>
 ACPP_FlyMan2PlayerCharacter::ACPP_FlyMan2PlayerCharacter()
 {
-	PrimaryActorTick.bCanEverTick = true;//これはTick関数を使用できるようにする一文
+	//これはTick関数を使用できるようにする一文
+	PrimaryActorTick.bCanEverTick = true;
 
-	Tags.AddUnique(TEXT("Player"));//タグの設定
+	//タグの設定
+	Tags.AddUnique(TEXT("Player"));
 
 	//当たり判定
 	this->OnActorBeginOverlap.AddDynamic(this, &ACPP_FlyMan2PlayerCharacter::OnBeginOverlap);
 }
 
+/// <summary>
+/// スタート関数
+/// </summary>
 void ACPP_FlyMan2PlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
+/// <summary>
+/// アップデート関数
+/// </summary>
 void ACPP_FlyMan2PlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ACPP_FlyMan2PlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 
 FVector ACPP_FlyMan2PlayerCharacter::GetPos()
@@ -42,7 +47,9 @@ void ACPP_FlyMan2PlayerCharacter::Shot()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Fire3"));
 }
 
-//当たり判定
+/// <summary>
+/// 当たり判定
+/// </summary>
 void ACPP_FlyMan2PlayerCharacter::OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor)
 {
 	//ここに衝突したときの処理を書く

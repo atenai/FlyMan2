@@ -1,17 +1,17 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CPP_Goal.h"
 #include "Engine.h"
 #include "Kismet/GameplayStatics.h"
 
-// Sets default values
+/// <summary>
+/// コンストラクタ
+/// </summary>
 ACPP_Goal::ACPP_Goal()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	//これはTick関数を使用できるようにする一文
 	PrimaryActorTick.bCanEverTick = true;
 
-	Tags.AddUnique(TEXT("Goal"));//タグの設定
+	//タグの設定
+	Tags.AddUnique(TEXT("Goal"));
 
 	//当たり判定1
 	//BoxComponentを追加し、BoxComponentをRootComponentにAttachする
@@ -30,21 +30,25 @@ ACPP_Goal::ACPP_Goal()
 	Collider->OnComponentBeginOverlap.AddDynamic(this, &ACPP_Goal::OnBoxBeginOverlap);
 }
 
-// Called when the game starts or when spawned
+/// <summary>
+/// スタート関数
+/// </summary>
 void ACPP_Goal::BeginPlay()
 {
-	Super::BeginPlay();
-	
+	Super::BeginPlay();	
 }
 
-// Called every frame
+/// <summary>
+/// アップデート関数
+/// </summary>
 void ACPP_Goal::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
-//当たり判定1
+/// <summary>
+/// 当たり判定１
+/// </summary>
 void ACPP_Goal::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (OtherActor != nullptr)
