@@ -15,5 +15,6 @@ class FLYMAN2_API ACPP_FlyMan2PlayerController : public APlayerController
 public:
 	virtual void SetupInputComponent() override;
 
+	void QuitGame();
 	void Fire();
 };
