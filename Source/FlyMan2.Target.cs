@@ -9,6 +9,11 @@ public class FlyMan2Target : TargetRules
 	{
 		Type = TargetType.Game;
 
-		ExtraModuleNames.AddRange( new string[] { "FlyMan2" } );
+        DefaultBuildSettings = BuildSettingsVersion.V5;
+
+        // ÅV‚ÌInclude Order‚ğg—p
+        IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
+
+        ExtraModuleNames.AddRange( new string[] { "FlyMan2" } );
 	}
 }

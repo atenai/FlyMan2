@@ -9,6 +9,12 @@ public class FlyMan2EditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 
-		ExtraModuleNames.AddRange( new string[] { "FlyMan2" } );
+        // 最新のビルド設定バージョンを使用
+        DefaultBuildSettings = BuildSettingsVersion.V5;
+
+        // 最新のInclude Orderを使用
+        IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
+
+        ExtraModuleNames.AddRange( new string[] { "FlyMan2" } );
 	}
 }
