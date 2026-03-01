@@ -73,3 +73,9 @@ void ACPP_FlyMan2PlayerCharacter::OnBeginOverlap(AActor* OverlappedActor, AActor
 		}
 	}
 }
+
+void ACPP_FlyMan2PlayerCharacter::AddCoinCount(int Amount)
+{
+	CoinCount += Amount;
+	UE_LOG(LogTemp, Warning, TEXT("Coin: %d"), CoinCount);
+}

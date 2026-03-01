@@ -18,7 +18,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -30,4 +30,12 @@ public:
 	//“–‚½‚è”»’è
 	UFUNCTION()
 	void OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
+
+private:
+	int CoinCount;
+
+public:
+	void AddCoinCount(int Amount);
+	int GetCoinCount() const { return CoinCount; }
 };
+
