@@ -9,7 +9,7 @@
 ACPP_Coin::ACPP_Coin()
 {
 	//当たり判定の作成	
- 	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = true;
 
 	//Sphere作成
 	Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere"));
@@ -21,7 +21,7 @@ ACPP_Coin::ACPP_Coin()
 	//Mesh作成
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(RootComponent);
-	Mesh->SetCollisionProfileName(ECollisionEnabled::NoCollision);
+	Mesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	//オーバーラップ登録
 	Sphere->OnComponentBeginOverlap.AddDynamic(this, &ACPP_Coin::OnOverlapBegin);
@@ -45,9 +45,10 @@ void ACPP_Coin::Tick(float DeltaTime)
 
 void ACPP_Coin::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SWeepResult)
 {
-	if (CPP_FlyMan2PlayerCharacter* Player = Cast<CPP_FlyMan2PlayerCharacter>(OtherActor))
+	if (ACPP_FlyMan2PlayerCharacter* Player = Cast<ACPP_FlyMan2PlayerCharacter>(OtherActor))
 	{
-		
+		Player->AddCoinCount(1);
+		Destroy();
 	}
 }
 

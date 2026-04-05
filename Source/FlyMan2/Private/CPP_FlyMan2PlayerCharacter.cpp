@@ -78,4 +78,5 @@ void ACPP_FlyMan2PlayerCharacter::AddCoinCount(int Amount)
 {
 	CoinCount += Amount;
 	UE_LOG(LogTemp, Warning, TEXT("Coin: %d"), CoinCount);
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, FString::Printf(TEXT("CoinCount: %d"), CoinCount));
 }
